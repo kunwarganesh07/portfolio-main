@@ -1194,7 +1194,7 @@
                 <div>
                     <div class="hero-badge">✦ AVAILABLE FOR OPPORTUNITIES ✦</div>
                     <h1 class="hero-name">Ganesh<br><span>Kunwar</span></h1>
-                    <div class="hero-role"><span class="typing-wrap">I build <span class="typed"
+                    <div class="hero-role"><span class="typing-wrap">I am a <span class="typed"
                                 id="typed-text"></span><span class="cursor"></span></span></div>
                     <p class="hero-bio">Full Stack Web Developer with 1+ years of hands-on experience in designing,
                         developing, and deploying dynamic
@@ -1234,8 +1234,8 @@
         <section id="skills">
             <div class="section-header">
                 <div class="section-tag">TECHNOLOGIES</div>
-                <h2>⚡ Skills Arsenal</h2>
-                <p>Cutting-edge tools & frameworks I master</p>
+                <h2>⚡ Skills</h2>
+                <p>These are the technologies I’ve worked with during my learning journey and projects — each helping me grow as a developer.</p>
             </div>
             <div class="skills-grid-2x2" id="skillsGrid"></div>
         </section>
@@ -1244,16 +1244,16 @@
             <div class="section-header">
                 <div class="section-tag">CAREER PATH</div>
                 <h2>💼 Experience</h2>
-                <p>Where I've levelled up and delivered impact</p>
+                <p>An overview of my career path, showing the positions I’ve held and how I’ve added value in different roles and teams.</p>
             </div>
             <div class="exp-list" id="expList"></div>
         </section>
 
         <section id="work">
             <div class="section-header">
-                <div class="section-tag">PORTFOLIO</div>
-                <h2>✨ Featured Projects</h2>
-                <p>Real-world impact & innovation</p>
+                <div class="section-tag">Work</div>
+                <h2>✨ Projects</h2>
+                <p>A showcase of my projects in frontend, backend, and fullstack.</p>
             </div>
             <div class="filter-row" id="filterRow"></div>
             <div class="projects-grid" id="projGrid"></div>
@@ -1265,7 +1265,7 @@
             <div class="section-header">
                 <div class="section-tag">ACADEMIA</div>
                 <h2>📖 Education</h2>
-                <p>From classrooms to coding labs, my educational journey has been filled with exploration and growth.
+                <p>From classrooms to coding labs, my educational journey has been filled with exploration and growth. Here's a look at where it all began.
                 </p>
             </div>
             <div class="edu-timeline" id="eduList"></div>
@@ -1602,7 +1602,7 @@
         const spyObs = new IntersectionObserver(entries => { let best = entries[0]; entries.forEach(e => { if (e.intersectionRatio > best.intersectionRatio) best = e; }); if (best.isIntersecting) setActive(best.target.id); }, { threshold: 0.3 });
         ["hero", "skills", "experience", "work", "education", "contact"].forEach(id => { let el = document.getElementById(id); if (el) spyObs.observe(el); });
         renderSkills(); renderExp(); renderEdu(); renderFilters(); renderProjects();
-        (function typing() { let phrases = ["scalable backends", "next-gen UIs", "real-time systems", "full‑stack magic"]; let idx = 0, char = 0, del = false; const el = document.getElementById("typed-text"); function tick() { let cur = phrases[idx]; if (!del) { el.innerText = cur.slice(0, char + 1); char++; if (char === cur.length) { del = true; setTimeout(tick, 2000); return; } } else { el.innerText = cur.slice(0, char - 1); char--; if (char === 0) { del = false; idx = (idx + 1) % phrases.length; } } setTimeout(tick, del ? 40 : 90); } tick(); })();
+        (function typing() { let phrases = ["Full Stack Developer", "Laravel Developer"]; let idx = 0, char = 0, del = false; const el = document.getElementById("typed-text"); function tick() { let cur = phrases[idx]; if (!del) { el.innerText = cur.slice(0, char + 1); char++; if (char === cur.length) { del = true; setTimeout(tick, 2000); return; } } else { el.innerText = cur.slice(0, char - 1); char--; if (char === 0) { del = false; idx = (idx + 1) % phrases.length; } } setTimeout(tick, del ? 40 : 90); } tick(); })();
         window.addEventListener("resize", () => { visibleCount = window.innerWidth < 768 ? 3 : 6; renderProjects(); });
     </script>
 </body>
