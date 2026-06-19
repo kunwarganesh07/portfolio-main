@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Ganesh Kunwar · CyberForge Portfolio</title>
+    <title>Ganesh Kunwar · Portfolio</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
@@ -60,17 +61,13 @@
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            background-image:
-                repeating-linear-gradient(45deg, rgba(0, 242, 254, 0.02) 0px, rgba(0, 242, 254, 0.02) 2px, transparent 2px, transparent 8px),
-                linear-gradient(135deg, #010101 0%, #03050b 100%);
+            background-image: repeating-linear-gradient(45deg, rgba(0, 242, 254, 0.02) 0px, rgba(0, 242, 254, 0.02) 2px, transparent 2px, transparent 8px), linear-gradient(135deg, #010101 0%, #03050b 100%);
         }
 
         .cyber-grid {
             position: fixed;
             inset: 0;
-            background-image:
-                linear-gradient(var(--cyan-dim) 1px, transparent 1px),
-                linear-gradient(90deg, var(--cyan-dim) 1px, transparent 1px);
+            background-image: linear-gradient(var(--cyan-dim) 1px, transparent 1px), linear-gradient(90deg, var(--cyan-dim) 1px, transparent 1px);
             background-size: 35px 35px;
             opacity: 0.08;
             pointer-events: none;
@@ -108,7 +105,7 @@
             z-index: 2;
         }
 
-        /* ===== NEON NAVBAR ===== */
+        /* navbar */
         nav {
             position: fixed;
             top: 0;
@@ -235,7 +232,7 @@
             border-top: 1px solid var(--border-glow);
         }
 
-        /* ===== HERO ===== */
+        /* HERO */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -373,38 +370,48 @@
             letter-spacing: 0.08em;
         }
 
-        /* HEXAGON PROFILE */
+        /* ==== HEXAGON → CIRCLE (bigger, better cover) ==== */
         .hero-img-wrap {
-            width: min(360px, 48vw);
-            height: min(360px, 48vw);
+            width: min(400px, 52vw);
+            height: min(400px, 52vw);
             position: relative;
+            flex-shrink: 0;
         }
 
         .hexagon {
             width: 100%;
             height: 100%;
-            clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+            border-radius: 50%;
+            /* perfect circle */
             background: linear-gradient(145deg, #0f1629, #03050b);
-            border: 2px solid var(--cyan-neon);
-            box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
+            border: 2.5px solid var(--cyan-neon);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.35);
             overflow: hidden;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hexagon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+            /* covers the circle fully, no empty space */
+            display: block;
+            border-radius: 50%;
+            /* ensure image itself is circular */
+            transform: scale(1.02);
+            /* slight zoom to avoid edge gaps */
         }
 
         .hexagon:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
             border-color: var(--cyan-core);
-            box-shadow: 0 0 35px var(--cyan-core);
+            box-shadow: 0 0 45px var(--cyan-core);
         }
 
-        /* section headers */
+        /* sections */
         section {
             padding: 100px 5vw;
             position: relative;
@@ -441,7 +448,7 @@
             font-size: 1rem;
         }
 
-        /* SKILLS - 2x2 GRID LARGER */
+        /* skills */
         .skills-grid-2x2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -455,7 +462,7 @@
             backdrop-filter: blur(8px);
             border: 1px solid var(--border-glow);
             border-radius: 32px;
-            padding: 2rem 2rem;
+            padding: 2rem;
             transition: 0.2s;
         }
 
@@ -509,7 +516,7 @@
             object-fit: contain;
         }
 
-        /* Experience */
+        /* experience */
         .exp-list {
             max-width: 1000px;
             margin: 0 auto;
@@ -602,7 +609,7 @@
             border: 0.5px solid var(--border-glow);
         }
 
-        /* PROJECTS */
+        /* projects */
         .filter-row {
             display: flex;
             justify-content: center;
@@ -715,7 +722,7 @@
             border-radius: 20px;
         }
 
-        /* EDUCATION - TIMELINE LEFT/RIGHT ALTERNATING */
+        /* education */
         .edu-timeline {
             position: relative;
             max-width: 1100px;
@@ -771,7 +778,6 @@
             box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15);
         }
 
-
         .edu-icon {
             width: 70px;
             height: 70px;
@@ -782,31 +788,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            font-size: 1.8rem;
-            font-weight: 800;
-            font-family: 'Space Grotesk', monospace;
-            color: var(--cyan-core);
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
-        }
-
-        .edu-logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* contain ki jagah cover */
-            border-radius: 50%;
-        }
-
-        /* .edu-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 2px solid var(--cyan-core);
-            background: linear-gradient(135deg, var(--bg-elevated), var(--bg-surface));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
         }
 
@@ -815,8 +796,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-        } */
-
+        }
 
         .edu-degree {
             font-weight: 800;
@@ -863,7 +843,7 @@
             z-index: 2;
         }
 
-        /* contact section */
+        /* contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -943,7 +923,7 @@
             cursor: pointer;
         }
 
-        /* ===== FOOTER - EXACTLY LIKE REFERENCE IMAGE ===== */
+        /* footer */
         footer {
             text-align: center;
             padding: 3rem 5vw 2.5rem;
@@ -1012,7 +992,7 @@
             letter-spacing: 0.03em;
         }
 
-        /* MODAL */
+        /* modal */
         #modal-overlay {
             display: none;
             position: fixed;
@@ -1110,6 +1090,12 @@
             .footer-nav {
                 gap: 1rem;
             }
+
+            .hero-img-wrap {
+                width: min(300px, 60vw);
+                height: min(300px, 60vw);
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 620px) {
@@ -1124,6 +1110,11 @@
             .footer-nav {
                 gap: 0.8rem;
                 flex-wrap: wrap;
+            }
+
+            .hero-img-wrap {
+                width: min(260px, 70vw);
+                height: min(260px, 70vw);
             }
         }
 
@@ -1152,12 +1143,11 @@
     <div class="cyber-grid"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
-
     <div class="app-wrapper">
         <nav id="navbar">
             <div class="nav-inner">
-                <div class="logo"><span class="brace"><</span> Ganesh<span class="glow">/</span>Kunwar <span
-                        class="brace">></span></div>
+                <div class="logo"><span class="brace">
+                        < </span> Ganesh<span class="glow">/</span>Kunwar <span class="brace">></span></div>
                 <div style="display:flex; gap:1rem;">
                     <ul class="nav-links">
                         <li><button onclick="goTo('hero')" data-id="hero">HOME</button></li>
@@ -1169,7 +1159,7 @@
                     </ul>
                     <div class="nav-icons">
                         <a href="https://github.com/kunwarganesh07" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://https://www.linkedin.com/in/ganesh-kunwar-254638245/" target="_blank"><i
+                        <a href="https://www.linkedin.com/in/ganesh-kunwar-254638245/" target="_blank"><i
                                 class="fab fa-linkedin"></i></a>
                     </div>
                     <div id="hamburger" onclick="toggleMenu()"><i class="fas fa-bars" id="menu-icon"></i></div>
@@ -1197,17 +1187,15 @@
                     <div class="hero-role"><span class="typing-wrap">I am a <span class="typed"
                                 id="typed-text"></span><span class="cursor"></span></span></div>
                     <p class="hero-bio">Full Stack Web Developer with 1+ years of hands-on experience in designing,
-                        developing, and deploying dynamic
-                        web applications using PHP, Laravel, MySQL, and modern frontend technologies. Experienced in
-                        building
-                        production-ready business solutions while contributing across frontend, backend, RESTful APIs,
-                        database
-                        architecture, and deployment workflows.</p>
-                    <div class="hero-cta"><a
-                            href="https://drive.google.com/file/d/1_rTd_VIEtV-xjdXpU8vN82K8rN_5bh0a/view?usp=sharing"
-                            class="btn-primary" target="_blank">
-                            DOWNLOAD CV →
-                        </a><button onclick="goTo('work')" class="btn-outline">EXPLORE WORK</button></div>
+                        developing, and deploying dynamic web applications using PHP, Laravel, MySQL, and modern
+                        frontend technologies. Experienced in building production-ready business solutions while
+                        contributing across frontend, backend, RESTful APIs, database architecture, and deployment
+                        workflows.</p>
+                    <div class="hero-cta">
+                        <a href="https://drive.google.com/file/d/1_rTd_VIEtV-xjdXpU8vN82K8rN_5bh0a/view?usp=sharing"
+                            class="btn-primary" target="_blank">DOWNLOAD CV →</a>
+                        <button onclick="goTo('work')" class="btn-outline">EXPLORE WORK</button>
+                    </div>
                     <div class="stats">
                         <div>
                             <div class="stat-num">1+</div>
@@ -1224,7 +1212,8 @@
                     </div>
                 </div>
                 <div class="hero-img-wrap">
-                    <div class="hexagon"><img src="images/profile.jpg" alt="Ganesh"
+                    <div class="hexagon">
+                        <img src="images/profile.jpg" alt="Ganesh"
                             onerror="this.src='https://ui-avatars.com/api/?name=Ganesh+Kunwar&background=03050b&color=00f2fe&bold=true&size=300'">
                     </div>
                 </div>
@@ -1235,20 +1224,20 @@
             <div class="section-header">
                 <div class="section-tag">TECHNOLOGIES</div>
                 <h2>⚡ Skills</h2>
-                <p>These are the technologies I’ve worked with during my learning journey and projects — each helping me grow as a developer.</p>
+                <p>These are the technologies I’ve worked with during my learning journey and projects — each helping me
+                    grow as a developer.</p>
             </div>
             <div class="skills-grid-2x2" id="skillsGrid"></div>
         </section>
-
         <section id="experience">
             <div class="section-header">
                 <div class="section-tag">CAREER PATH</div>
                 <h2>💼 Experience</h2>
-                <p>An overview of my career path, showing the positions I’ve held and how I’ve added value in different roles and teams.</p>
+                <p>An overview of my career path, showing the positions I’ve held and how I’ve added value in different
+                    roles and teams.</p>
             </div>
             <div class="exp-list" id="expList"></div>
         </section>
-
         <section id="work">
             <div class="section-header">
                 <div class="section-tag">Work</div>
@@ -1260,17 +1249,15 @@
             <div class="show-more-row" id="showMoreRow"
                 style="display:flex; justify-content:center; margin-top:2rem; gap:1rem;"></div>
         </section>
-
         <section id="education">
             <div class="section-header">
                 <div class="section-tag">ACADEMIA</div>
                 <h2>📖 Education</h2>
-                <p>From classrooms to coding labs, my educational journey has been filled with exploration and growth. Here's a look at where it all began.
-                </p>
+                <p>From classrooms to coding labs, my educational journey has been filled with exploration and growth.
+                    Here's a look at where it all began.</p>
             </div>
             <div class="edu-timeline" id="eduList"></div>
         </section>
-
         <section id="contact">
             <div class="section-header">
                 <div class="section-tag">CONNECT</div>
@@ -1283,12 +1270,10 @@
                     <p>Whether you have a project idea, a question, or just want to connect — feel free to reach out.
                         I'll get back to you as soon as possible.</p>
                     <div class="contact-links"><a href="mailto:ganeshkunwar2003@gmail.com"><i
-                                class="fas fa-envelope"></i>
-                            ganeshkunwar2003@gmail.com</a><a
+                                class="fas fa-envelope"></i> ganeshkunwar2003@gmail.com</a><a
                             href="https://www.linkedin.com/in/ganesh-kunwar-254638245/"><i class="fab fa-linkedin"></i>
-                            https://www.linkedin.com/in/ganesh-kunwar-254638245/</a><a
-                            href="https://github.com/kunwarganesh07"><i class="fab fa-github"></i>
-                            https://github.com/kunwarganesh07</a></div>
+                            linkedin.com/in/ganesh-kunwar</a><a href="https://github.com/kunwarganesh07"><i
+                                class="fab fa-github"></i> github.com/kunwarganesh07</a></div>
                 </div>
                 <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)"><input type="email"
                         name="user_email" placeholder="Your email" required><input type="text" name="user_name"
@@ -1298,7 +1283,6 @@
             </div>
         </section>
 
-        <!-- FOOTER - EXACTLY LIKE REFERENCE IMAGE -->
         <footer>
             <div class="footer-name">Ganesh<span> Kunwar</span></div>
             <div class="footer-nav">
@@ -1311,13 +1295,14 @@
             </div>
             <div class="footer-social">
                 <a href="https://github.com/kunwarganesh07" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://https://www.linkedin.com/in/ganesh-kunwar-254638245/" target="_blank"><i
+                <a href="https://www.linkedin.com/in/ganesh-kunwar-254638245/" target="_blank"><i
                         class="fab fa-linkedin"></i></a>
                 <a href="https://wa.me/919372970769" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
             <div class="footer-copyright">© 2025 Ganesh Kunwar. All rights reserved.</div>
         </footer>
     </div>
+
     <div id="modal-overlay" onclick="closeModalOverlay(event)">
         <div class="modal-content" id="modalInner">
             <div class="modal-header"><button onclick="closeModal()"
@@ -1330,193 +1315,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // ========== DATA ==========
+        // ===== DATA =====
         const skillsData = [
-            {
-                title: "Frontend",
-                skills: [
-                    {
-                        name: "HTML5",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                    },
-                    {
-                        name: "CSS3",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                    },
-                    {
-                        name: "JavaScript",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    },
-                    {
-                        name: "Bootstrap",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                    },
-                    {
-                        name: "jQuery",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-                    },
-                    {
-                        name: "Blade",
-                        logo: "https://cdn.simpleicons.org/laravel/FF2D20"
-                    }
-                ]
-            },
-
-            {
-                title: "Backend",
-                skills: [
-                    {
-                        name: "PHP",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                    },
-                    {
-                        name: "Laravel",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
-                    },
-                    {
-                        name: "MySQL",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                    },
-                    {
-                        name: "REST APIs",
-                        logo: "https://cdn.simpleicons.org/postman/FF6C37"
-                    }
-                ]
-            },
-
-            {
-                title: "Tools & Deployment",
-                skills: [
-                    {
-                        name: "Git",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                    },
-                    {
-                        name: "GitHub",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                    },
-                    {
-                        name: "Postman",
-                        logo: "https://cdn.simpleicons.org/postman/FF6C37"
-                    },
-                    {
-                        name: "Composer",
-                        logo: "https://cdn.simpleicons.org/composer/885630"
-                    },
-                    {
-                        name: "cPanel",
-                        logo: "https://cdn.simpleicons.org/cpanel/FF6C2C"
-                    }
-                ]
-            },
-
-            {
-                title: "Database & Hosting",
-                skills: [
-                    {
-                        name: "MySQL",
-                        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                    },
-                    {
-                        name: "Domain Hosting",
-                        logo: "https://cdn.simpleicons.org/cloudflare/F38020"
-                    }
-                ]
-            }
+            { title: "Frontend", skills: [{ name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" }, { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }, { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }, { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" }, { name: "jQuery", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" }, { name: "Blade", logo: "https://cdn.simpleicons.org/laravel/FF2D20" }] },
+            { title: "Backend", skills: [{ name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }, { name: "Laravel", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" }, { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }, { name: "REST APIs", logo: "https://cdn.simpleicons.org/postman/FF6C37" }] },
+            { title: "Tools & Deployment", skills: [{ name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }, { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }, { name: "Postman", logo: "https://cdn.simpleicons.org/postman/FF6C37" }, { name: "Composer", logo: "https://cdn.simpleicons.org/composer/885630" }, { name: "cPanel", logo: "https://cdn.simpleicons.org/cpanel/FF6C2C" }] },
+            { title: "Database & Hosting", skills: [{ name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }, { name: "Domain Hosting", logo: "https://cdn.simpleicons.org/cloudflare/F38020" }] }
         ];
-
         const expData = [
-            {
-                id: 0,
-                role: "Backend Developer Intern",
-                company: "BG Infotechs",
-                date: "January 2025 – March 2025",
-                desc: "Developed Laravel-based business applications with inventory tracking, payment management, and REST API integration. Collaborated on live projects and gained hands-on experience in deployment and database management.",
-                skills: ["PHP", "Laravel", "MySQL", "Blade", "JavaScript", "cPanel", "GitHub"]
-            },
-            {
-                id: 1,
-                role: "Backend Developer",
-                company: "BG Infotechs",
-                date: "March 2025 – April 2026",
-                desc: "Building and maintaining production-ready Laravel applications for inventory, construction, and business operations. Managing backend development, database design, deployment, and branch-wise workflow automation.",
-                skills: ["PHP", "Laravel", "MySQL", "Blade", "JavaScript", "cPanel", "GitHub"]
-            }
+            { id: 0, role: "Backend Developer Intern", company: "BG Infotechs", date: "January 2025 – March 2025", desc: "Developed Laravel-based business applications with inventory tracking, payment management, and REST API integration. Collaborated on live projects and gained hands-on experience in deployment and database management.", skills: ["PHP", "Laravel", "MySQL", "Blade", "JavaScript", "cPanel", "GitHub"] },
+            { id: 1, role: "Backend Developer", company: "BG Infotechs", date: "March 2025 – April 2026", desc: "Building and maintaining production-ready Laravel applications for inventory, construction, and business operations. Managing backend development, database design, deployment, and branch-wise workflow automation.", skills: ["PHP", "Laravel", "MySQL", "Blade", "JavaScript", "cPanel", "GitHub"] }
         ];
-
         const projData = [
-            {
-                id: 0,
-                title: "Classic Enterprises",
-                category: "fullstack",
-                desc: "Laravel-based water filter shop management system with branch-wise inventory control, customer management, sales tracking, and stock movement monitoring.",
-                image: "images/classic.png",
-                tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap", "jQuery"],
-                github: "",
-                webapp: "https://www.mamubag.com.np/"
-            },
-            {
-                id: 1,
-                title: "Mahi Flooring",
-                category: "fullstack",
-                desc: "Business showcase website for flooring and interior design services with portfolio management and user-friendly project display.",
-                image: "images/flooring.png",
-                tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap"],
-                github: "#",
-                webapp: "https://mahiflooring.com/"
-            },
-            {
-                id: 2,
-                title: "Gwallek Nirman Sewa",
-                category: "fullstack",
-                desc: "Construction and site management system with branch-wise project handling, inventory tracking, material transfers, and operational management.",
-                image: "images/gns.png",
-                tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap", "jQuery"],
-                github: "#",
-                webapp: "https://gwalleknirmansewa.com/"
-            },
-            {
-                id: 3,
-                title: "Inventory Management System",
-                category: "backend",
-                desc: "Laravel-based inventory solution for stock-in, stock-out, product returns, and financial transaction management.",
-                image: "images/inventory.jpg",
-                tags: ["PHP", "Laravel", "MySQL", "REST API"],
-                github: "#",
-                webapp: "https://swastikshreyaenterprises.com.np/"
-            }
+            { id: 0, title: "Classic Enterprises", category: "fullstack", desc: "Laravel-based water filter shop management system with branch-wise inventory control, customer management, sales tracking, and stock movement monitoring.", image: "images/classic.png", tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap", "jQuery"], github: "", webapp: "https://www.mamubag.com.np/" },
+            { id: 1, title: "Mahi Flooring", category: "fullstack", desc: "Business showcase website for flooring and interior design services with portfolio management and user-friendly project display.", image: "images/flooring.png", tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap"], github: "#", webapp: "https://mahiflooring.com/" },
+            { id: 2, title: "Gwallek Nirman Sewa", category: "fullstack", desc: "Construction and site management system with branch-wise project handling, inventory tracking, material transfers, and operational management.", image: "images/gns.png", tags: ["PHP", "Laravel", "MySQL", "Blade", "Bootstrap", "jQuery"], github: "#", webapp: "https://gwalleknirmansewa.com/" },
+            { id: 3, title: "Inventory Management System", category: "backend", desc: "Laravel-based inventory solution for stock-in, stock-out, product returns, and financial transaction management.", image: "images/inventory.jpg", tags: ["PHP", "Laravel", "MySQL", "REST API"], github: "#", webapp: "https://swastikshreyaenterprises.com.np/" }
         ];
-
-
-
         const eduData = [
-            {
-                degree: "B.Sc. Information Technology",
-                school: "Jashbhai Maganbhai Patel College of Commerce, Mumbai",
-                date: "2022 – 2025",
-                initial: "JM",
-                side: "left",
-                // icon: "fa-university"
-                logo: "images/jmpc.webp"
-            },
-            {
-                degree: "HSC (Science)",
-                school: "Thakur College of Science, Mumbai",
-                date: "2020 – 2022",
-                initial: "TC",
-                side: "right",
-                logo: "images/tcs.webp"
-            },
-
-            {
-                degree: "SSC",
-                school: "Film City School, Mumbai",
-                date: "2019",
-                initial: "FC",
-                side: "left",
-                logo: "images/fc.webp"
-            }
-
+            { degree: "B.Sc. Information Technology", school: "Jashbhai Maganbhai Patel College of Commerce, Mumbai", date: "2022 – 2025", initial: "JM", side: "left", logo: "images/jmpc.webp" },
+            { degree: "HSC (Science)", school: "Thakur College of Science, Mumbai", date: "2020 – 2022", initial: "TC", side: "right", logo: "images/tcs.webp" },
+            { degree: "SSC", school: "Film City School, Mumbai", date: "2019", initial: "FC", side: "left", logo: "images/fc.webp" }
         ];
 
         let currentCat = "all", visibleCount = window.innerWidth < 768 ? 3 : 6;
@@ -1531,67 +1350,8 @@
         function renderProjects() { let filtered = currentCat === "all" ? projData : projData.filter(p => p.category === currentCat); let visible = filtered.slice(0, visibleCount); document.getElementById("projGrid").innerHTML = visible.map(p => `<div class="proj-card" onclick="openModal(${p.id})"><div class="proj-thumb"><img src="${p.image}" onerror="this.src='https://placehold.co/600x300/0f1525/00f2fe?text=${p.title}'"><span class="proj-badge">${p.category}</span></div><div class="proj-body"><div class="proj-title">${p.title}</div><p class="proj-desc">${p.desc}</p><div class="proj-tags">${p.tags.map(t => `<span class="proj-tag">${t}</span>`).join("")}</div></div></div>`).join(""); let rowDiv = document.getElementById("showMoreRow"); rowDiv.innerHTML = ""; if (filtered.length > 6) { if (visibleCount < filtered.length) rowDiv.innerHTML += '<button class="filter-btn" onclick="showMore()">+ SHOW MORE</button>'; if (visibleCount > 6) rowDiv.innerHTML += '<button class="filter-btn" onclick="showLess()">− SHOW LESS</button>'; } }
         function filterProj(cat, btn) { currentCat = cat; visibleCount = 6; document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active")); btn.classList.add("active"); renderProjects(); }
         function showMore() { visibleCount += 3; renderProjects(); } function showLess() { visibleCount = 6; renderProjects(); }
-        function renderEdu() {
-            document.getElementById("eduList").innerHTML = eduData.map((edu) => `
-                <div class="edu-item ${edu.side}">
-                    <div class="edu-content-wrapper">
-                        <div class="edu-card">
-                            <div class="edu-icon">
-                                <div class="edu-icon">
-                                    <img src="${edu.logo}" alt="${edu.school}" class="edu-logo">
-                                </div>
-                            </div>
-                            <div class="edu-degree">${edu.degree}</div>
-                            <div class="edu-school"><i class="fas fa-map-marker-alt"></i> ${edu.school}</div>
-                            <div class="edu-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>${edu.date}</div>
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="edu-content-wrapper"></div>
-                </div>
-            `).join("");
-        }
-        function openModal(id) {
-            let p = projData.find(x => x.id === id);
-
-            document.getElementById("modalBody").innerHTML = `
-        <img src="${p.image}" onerror="this.src='https://placehold.co/600x300/0f1525/00f2fe'">
-
-        <h3>${p.title}</h3>
-
-        <p>${p.desc}</p>
-
-        <div class="proj-tags" style="margin:12px 0">
-            ${p.tags.map(t => `<span class="proj-tag">${t}</span>`).join("")}
-        </div>
-
-        <div style="display:flex; gap:12px; margin-top:15px;">
-
-            ${p.github && p.github !== "#" ? `
-                <a href="${p.github}"
-                   target="_blank"
-                   class="btn-outline"
-                   style="padding:6px 16px;">
-                   GitHub
-                </a>
-            ` : ""}
-
-            ${p.webapp && p.webapp !== "#" ? `
-                <a href="${p.webapp}"
-                   target="_blank"
-                   class="btn-primary"
-                   style="padding:6px 16px;">
-                   Live Demo
-                </a>
-            ` : ""}
-
-        </div>
-    `;
-
-            document.getElementById("modal-overlay").classList.add("open");
-            document.body.style.overflow = "hidden";
-        }
-
+        function renderEdu() { document.getElementById("eduList").innerHTML = eduData.map((edu) => `<div class="edu-item ${edu.side}"><div class="edu-content-wrapper"><div class="edu-card"><div class="edu-icon"><img src="${edu.logo}" alt="${edu.school}" class="edu-logo"></div><div class="edu-degree">${edu.degree}</div><div class="edu-school"><i class="fas fa-map-marker-alt"></i> ${edu.school}</div><div class="edu-date"><i class="far fa-calendar-alt" style="margin-right:6px;"></i>${edu.date}</div></div></div><div class="timeline-dot"></div><div class="edu-content-wrapper"></div></div>`).join(""); }
+        function openModal(id) { let p = projData.find(x => x.id === id); document.getElementById("modalBody").innerHTML = `<img src="${p.image}" onerror="this.src='https://placehold.co/600x300/0f1525/00f2fe'"><h3>${p.title}</h3><p>${p.desc}</p><div class="proj-tags" style="margin:12px 0">${p.tags.map(t => `<span class="proj-tag">${t}</span>`).join("")}</div><div style="display:flex; gap:12px; margin-top:15px;">${p.github && p.github !== "#" ? `<a href="${p.github}" target="_blank" class="btn-outline" style="padding:6px 16px;">GitHub</a>` : ""}${p.webapp && p.webapp !== "#" ? `<a href="${p.webapp}" target="_blank" class="btn-primary" style="padding:6px 16px;">Live Demo</a>` : ""}</div>`; document.getElementById("modal-overlay").classList.add("open"); document.body.style.overflow = "hidden"; }
         function closeModal() { document.getElementById("modal-overlay").classList.remove("open"); document.body.style.overflow = ""; }
         function closeModalOverlay(e) { if (e.target.id === "modal-overlay") closeModal(); }
         function sendEmail(e) { e.preventDefault(); emailjs.init("u_xVAbTEG3cO3pOyJ"); emailjs.sendForm("service_9kzzcnr", "template_8j2bixb", e.target).then(() => { e.target.reset(); toast("✨ Message sent successfully!", "success"); }).catch(() => toast("❌ Failed, try again", "error")); }
